@@ -16,6 +16,8 @@
 		0561A91F23B4BEBF001D87FB /* TCP_SocketLayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561A91E23B4BEBF001D87FB /* TCP_SocketLayerUITests.swift */; };
 		0561A92D23B4C218001D87FB /* SocketLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561A92C23B4C218001D87FB /* SocketLayer.swift */; };
 		0561A92E23B4C218001D87FB /* SocketLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561A92C23B4C218001D87FB /* SocketLayer.swift */; };
+		0561A93223B56DEA001D87FB /* SocketLayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561A93123B56DEA001D87FB /* SocketLayerDelegate.swift */; };
+		0561A93323B56DEA001D87FB /* SocketLayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561A93123B56DEA001D87FB /* SocketLayerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,7 @@
 		0561A91E23B4BEBF001D87FB /* TCP_SocketLayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCP_SocketLayerUITests.swift; sourceTree = "<group>"; };
 		0561A92023B4BEBF001D87FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0561A92C23B4C218001D87FB /* SocketLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketLayer.swift; sourceTree = "<group>"; };
+		0561A93123B56DEA001D87FB /* SocketLayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketLayerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				0561A92C23B4C218001D87FB /* SocketLayer.swift */,
+				0561A93123B56DEA001D87FB /* SocketLayerDelegate.swift */,
 			);
 			path = SocketLayer;
 			sourceTree = "<group>";
@@ -269,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0561A90123B4BEBE001D87FB /* ViewController.swift in Sources */,
+				0561A93223B56DEA001D87FB /* SocketLayerDelegate.swift in Sources */,
 				0561A8FF23B4BEBE001D87FB /* AppDelegate.swift in Sources */,
 				0561A92D23B4C218001D87FB /* SocketLayer.swift in Sources */,
 			);
@@ -278,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0561A93323B56DEA001D87FB /* SocketLayerDelegate.swift in Sources */,
 				0561A92E23B4C218001D87FB /* SocketLayer.swift in Sources */,
 				0561A91423B4BEBF001D87FB /* TCP_SocketLayerTests.swift in Sources */,
 			);

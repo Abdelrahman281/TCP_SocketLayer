@@ -31,6 +31,11 @@ class SocketLayer: NSObject {
     let maxReadLength: Int
     
     
+    //Delegate
+    
+    var delegate: SocketLayerDelegate?
+    
+    
     //Private Initializer.
     
     private init(maxLength: Int) {
@@ -105,7 +110,19 @@ class SocketLayer: NSObject {
                     break
                 }
                 
-//                constructMessage(buffer: buffer, length: numberOfBytesRead)
+                constructMessage(buffer: buffer, length: numberOfBytesRead)
             }
+        }
+        
+        
+        //Constructing Message Function.
+        
+        private func constructMessage(buffer: UnsafeMutablePointer<UInt8>, length: Int) {
+            guard let message = String(bytesNoCopy: buffer, length: length, encoding: .utf8, freeWhenDone: true) else {
+                print("Error in getting the message")
+                return
+            }
+            
+            delegate?.receive(message: message)
         }
 }

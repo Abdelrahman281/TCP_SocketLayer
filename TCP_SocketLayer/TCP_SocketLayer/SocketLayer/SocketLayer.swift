@@ -36,4 +36,28 @@ class SocketLayer: NSObject {
     private init(maxLength: Int) {
         maxReadLength = maxLength
     }
+    
+    
+    //Setup Connection function.
+    
+    func setupConnection(host: String, port: UInt32) {
+        var readStream: Unmanaged<CFReadStream>?
+        var writeStream: Unmanaged<CFWriteStream>?
+        
+        CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, host as CFString, port, &readStream, &writeStream)
+        
+        //Make Streams Managed
+        inputStream = readStream?.takeRetainedValue()
+        outputStream = writeStream?.takeRetainedValue()
+        
+        inputStream.delegate = self
+        
+        inputStream.schedule(in: .current, forMode: .common)
+        outputStream.schedule(in: .current, forMode: .common)
+        
+        inputStream.open()
+        outputStream.open()
+    }
+    
+    
 }

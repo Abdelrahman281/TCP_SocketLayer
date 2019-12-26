@@ -50,7 +50,7 @@ class SocketLayer: NSObject {
         inputStream = readStream?.takeRetainedValue()
         outputStream = writeStream?.takeRetainedValue()
         
-//        inputStream.delegate = self
+        inputStream.delegate = self
         
         inputStream.schedule(in: .current, forMode: .common)
         outputStream.schedule(in: .current, forMode: .common)
@@ -66,11 +66,46 @@ class SocketLayer: NSObject {
         if let data = message.data(using: .utf8) {
             data.withUnsafeBytes{ body in
                 guard let pointer = body.baseAddress?.assumingMemoryBound(to: UInt8.self) else {
-                    print("Error")
+                    print("Error in creating the pointer")
                     return
                 }
                 outputStream.write(pointer, maxLength: data.count)
             }
         }
     }
+}
+    
+    
+    //Stream Delegate & Receive Handling.
+    
+    extension SocketLayer: StreamDelegate {
+        
+        
+        //Stream Handling Function.
+        
+        func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
+            if eventCode == .hasBytesAvailable {
+                
+                //New Message Received.
+                readAvailableBytes(stream: aStream as! InputStream)
+            }
+        }
+        
+        
+        //Reading Bytes Function.
+        
+        private func readAvailableBytes(stream: InputStream) {
+            let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: maxReadLength)
+            
+            while inputStream.hasBytesAvailable {
+                let numberOfBytesRead = inputStream.read(buffer, maxLength: maxReadLength)
+                
+                if numberOfBytesRead < 0, let _ = inputStream.streamError {
+                    print("Error in reading the stream")
+                    break
+                }
+                
+//                constructMessage(buffer: buffer, length: numberOfBytesRead)
+            }
+        }
 }

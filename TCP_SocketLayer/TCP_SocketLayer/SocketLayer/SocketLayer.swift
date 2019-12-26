@@ -50,7 +50,7 @@ class SocketLayer: NSObject {
         inputStream = readStream?.takeRetainedValue()
         outputStream = writeStream?.takeRetainedValue()
         
-        inputStream.delegate = self
+//        inputStream.delegate = self
         
         inputStream.schedule(in: .current, forMode: .common)
         outputStream.schedule(in: .current, forMode: .common)
@@ -60,4 +60,17 @@ class SocketLayer: NSObject {
     }
     
     
+    //Send Function.
+    
+    func send(message: String) {
+        if let data = message.data(using: .utf8) {
+            data.withUnsafeBytes{ body in
+                guard let pointer = body.baseAddress?.assumingMemoryBound(to: UInt8.self) else {
+                    print("Error")
+                    return
+                }
+                outputStream.write(pointer, maxLength: data.count)
+            }
+        }
+    }
 }

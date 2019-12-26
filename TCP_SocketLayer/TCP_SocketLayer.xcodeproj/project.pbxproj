@@ -14,6 +14,8 @@
 		0561A90923B4BEBF001D87FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0561A90723B4BEBF001D87FB /* LaunchScreen.storyboard */; };
 		0561A91423B4BEBF001D87FB /* TCP_SocketLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561A91323B4BEBF001D87FB /* TCP_SocketLayerTests.swift */; };
 		0561A91F23B4BEBF001D87FB /* TCP_SocketLayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561A91E23B4BEBF001D87FB /* TCP_SocketLayerUITests.swift */; };
+		0561A92D23B4C218001D87FB /* SocketLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561A92C23B4C218001D87FB /* SocketLayer.swift */; };
+		0561A92E23B4C218001D87FB /* SocketLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561A92C23B4C218001D87FB /* SocketLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,7 @@
 		0561A91A23B4BEBF001D87FB /* TCP_SocketLayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCP_SocketLayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0561A91E23B4BEBF001D87FB /* TCP_SocketLayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCP_SocketLayerUITests.swift; sourceTree = "<group>"; };
 		0561A92023B4BEBF001D87FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0561A92C23B4C218001D87FB /* SocketLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,7 @@
 		0561A8FD23B4BEBE001D87FB /* TCP_SocketLayer */ = {
 			isa = PBXGroup;
 			children = (
+				0561A93023B4C266001D87FB /* SocketLayer */,
 				0561A8FE23B4BEBE001D87FB /* AppDelegate.swift */,
 				0561A90023B4BEBE001D87FB /* ViewController.swift */,
 				0561A90223B4BEBE001D87FB /* Main.storyboard */,
@@ -123,6 +127,14 @@
 				0561A92023B4BEBF001D87FB /* Info.plist */,
 			);
 			path = TCP_SocketLayerUITests;
+			sourceTree = "<group>";
+		};
+		0561A93023B4C266001D87FB /* SocketLayer */ = {
+			isa = PBXGroup;
+			children = (
+				0561A92C23B4C218001D87FB /* SocketLayer.swift */,
+			);
+			path = SocketLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +270,7 @@
 			files = (
 				0561A90123B4BEBE001D87FB /* ViewController.swift in Sources */,
 				0561A8FF23B4BEBE001D87FB /* AppDelegate.swift in Sources */,
+				0561A92D23B4C218001D87FB /* SocketLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0561A92E23B4C218001D87FB /* SocketLayer.swift in Sources */,
 				0561A91423B4BEBF001D87FB /* TCP_SocketLayerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
